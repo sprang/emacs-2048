@@ -34,7 +34,7 @@
 
 (make-variable-buffer-local '2048-buffer-name)
 (make-variable-buffer-local '2048-grid-dim)
-(make-variable-buffer-local '1048-grid)
+(make-variable-buffer-local '2048-grid)
 (make-variable-buffer-local '2048-score)
 (make-variable-buffer-local '2048-moves)
 (make-variable-buffer-local '2048-winning-value)
