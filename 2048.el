@@ -23,7 +23,7 @@
  
 ;;; Code:
 
-(eval-when-compile (require 'cl-lib))
+(require 'cl-lib)
 
 (defvar 2048-buffer-name "*2048*")
 (defvar 2048-grid-dim 4)
