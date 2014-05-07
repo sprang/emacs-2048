@@ -1,4 +1,3 @@
-;;test
 ;;; 2048.el --- implementation of 2048 for GNU Emacs
 
 ;; Copyright (c) 2014 Steve Sprang
