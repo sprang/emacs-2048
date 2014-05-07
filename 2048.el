@@ -31,6 +31,7 @@
 (defvar 2048-score 0)
 (defvar 2048-moves 0)
 (defvar 2048-winning-value 11)
+(defvar 2048-colors '("#712704" "#bd7803" "#fe9d01" "#ffbb1c" "#eed205" "#ff8c05" "#fdd283" "#43a102" "#a2b700" "#04477c" "#065fb9" "#049ff1"))
 
 (make-variable-buffer-local '2048-buffer-name)
 (make-variable-buffer-local '2048-grid-dim)
@@ -38,6 +39,7 @@
 (make-variable-buffer-local '2048-score)
 (make-variable-buffer-local '2048-moves)
 (make-variable-buffer-local '2048-winning-value)
+(make-variable-buffer-local '2048-colors)
 
 ;; ;;;;;;;;;;; utility functions ;;;;;;;;;;;;;;;;;;;;;;
 
@@ -193,7 +195,8 @@
 (defun 2048-draw-row (row)
   "Draw a ROW of the grid."
   (insert "\t")
-  (insert (mapconcat #'2048-value-to-string row ""))
+  (dolist (item row)
+    (insert (propertize (2048-value-to-string item) 'font-lock-face `(:foreground ,@(nthcdr item 2048-colors)))))
   (insert "\n\n"))
 
 (defun 2048-draw-grid (grid message)
